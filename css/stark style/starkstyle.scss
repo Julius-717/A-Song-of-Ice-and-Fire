@@ -1,0 +1,86 @@
+// imports fonts
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Unicase");
+@import url("https://fonts.googleapis.com/css?family=Cinzel");
+
+@import "../style";
+
+// font variables
+$starkfontcolor: rgb(170, 170, 170);
+$starkcardcolor: #111;
+$starkfontsize: 4em;
+
+// card variables
+$cardcolor: grey;
+$deadcardfilter: grayscale(100%);
+
+.headerStark {
+  @include headerbase;
+  background-image: url(../../images/nav/wolf_pelt.jpg);
+}
+
+.backgroundStark {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -999;
+}
+
+.stark {
+  background-image: url(../../images/main/stark_direwolve.png);
+  background-size: contain;
+  background-position: center center;
+  height: 100vh;
+  background-repeat: no-repeat;
+
+  .h1stark {
+    @include Hmain;
+    color: $starkfontcolor;
+    font-size: $starkfontsize;
+    position: absolute;
+    top: 6em;
+    left: 2em;
+    text-shadow: 0 0 2px black, 0 0 8px black, 0 0 64px black;
+  }
+}
+
+.starkfamily {
+  .h2stark {
+    @include Hmain;
+    color: $starkfontcolor;
+    text-decoration: underline;
+    margin: 2em 4em;
+    font-size: 3em;
+  }
+
+  .tree {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    background: #111;
+
+    .card {
+      margin: 16px 36px;
+    }
+
+    .cardcontainer {
+      background-color: $cardcolor;
+    }
+
+    .cardimg {
+      border: 2px solid dimgray;
+    }
+
+    .h4card {
+      color: $starkcardcolor;
+      text-align: center;
+      padding: 8px;
+    }
+  }
+
+  .deadcard {
+    filter: $deadcardfilter;
+  }
+}

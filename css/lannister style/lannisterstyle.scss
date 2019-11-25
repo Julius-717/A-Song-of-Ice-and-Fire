@@ -1,0 +1,84 @@
+// imports fonts
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Unicase");
+@import url("https://fonts.googleapis.com/css?family=Cinzel");
+
+@import "../style";
+
+// font variables
+$lannisterfontcolor: rgb(245, 220, 109);
+$lannistercardcolor: rgb(228, 38, 13);
+$lannisterfontsize: 4em;
+
+// card variables
+$cardcolor: whitesmoke;
+$cardfontsize: 1.4em;
+$deadcardfilter: grayscale(100%);
+
+.headerLannister {
+  @include headerbase;
+  background-image: url(../../images/nav/lion-fur.jpg);
+}
+
+.lannister {
+  background-image: url(../../images/main/lannister_lion.png);
+  background-color: $lannistercardcolor;
+  background-size: contain;
+  background-position: 15em 6em, center;
+  height: 720px;
+  background-repeat: no-repeat;
+
+  .h1lannister {
+    @include Hmain;
+    color: $lannisterfontcolor;
+    font-size: $lannisterfontsize;
+    position: absolute;
+    top: 6em;
+    left: 2em;
+    text-shadow: 0 0 2px black, 0 0 8px black, 0 0 64px black;
+  }
+}
+
+.lannisterfamily {
+  .h2lannister {
+    @include Hmain;
+    color: $lannisterfontcolor;
+    margin: 0 2em;
+    font-size: 3em;
+  }
+
+  //   .h3baratheon {
+  //     @include Hmain;
+  //     color: $lannisterfontcolor;
+  //     font-size: 2em;
+  //   }
+
+  .tree {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+
+    .card {
+      margin: 16px 36px;
+    }
+
+    .cardcontainer {
+      background-color: $lannistercardcolor;
+    }
+
+    .cardimg {
+      border: 2px solid $lannisterfontcolor;
+    }
+
+    .h4card {
+      color: $lannisterfontcolor;
+      font-size: $cardfontsize;
+      text-align: center;
+      padding: 8px;
+    }
+  }
+
+  .deadcard {
+    filter: $deadcardfilter;
+  }
+}

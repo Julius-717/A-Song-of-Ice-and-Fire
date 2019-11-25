@@ -1,0 +1,84 @@
+// imports fonts
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Unicase");
+@import url("https://fonts.googleapis.com/css?family=Cinzel");
+
+@import "../style";
+
+// font variables
+$greyjoyfontcolor: rgb(185, 163, 63);
+$greyjoycardcolor: rgb(36, 36, 36);
+$greyjoyfontsize: 4em;
+
+// card variables
+$cardcolor: whitesmoke;
+$cardfontsize: 1.4em;
+$deadcardfilter: grayscale(100%);
+
+.headerGreyjoy {
+  @include headerbase;
+  background-image: url(../../images/nav/octopus-arms.jpg);
+}
+
+.greyjoy {
+  background-image: url(../../images/main/Greyjoy_squid.png);
+  background-color: $greyjoycardcolor;
+  background-size: contain;
+  background-position: 15em 6em, center;
+  height: 720px;
+  background-repeat: no-repeat;
+
+  .h1greyjoy {
+    @include Hmain;
+    color: $greyjoyfontcolor;
+    font-size: $greyjoyfontsize;
+    position: absolute;
+    top: 6em;
+    left: 2em;
+    text-shadow: 0 0 2px black, 0 0 8px black, 0 0 64px black;
+  }
+}
+
+.greyjoyfamily {
+  .h2greyjoy {
+    @include Hmain;
+    color: $greyjoyfontcolor;
+    margin: 0 2em;
+    font-size: 3em;
+  }
+
+  //   .h3baratheon {
+  //     @include Hmain;
+  //     color: $lannisterfontcolor;
+  //     font-size: 2em;
+  //   }
+
+  .tree {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+
+    .card {
+      margin: 16px 36px;
+    }
+
+    .cardcontainer {
+      background-color: $greyjoycardcolor;
+    }
+
+    .cardimg {
+      border: 2px solid $greyjoyfontcolor;
+    }
+
+    .h4card {
+      color: $greyjoyfontcolor;
+      font-size: $cardfontsize;
+      text-align: center;
+      padding: 8px;
+    }
+  }
+
+  .deadcard {
+    filter: $deadcardfilter;
+  }
+}

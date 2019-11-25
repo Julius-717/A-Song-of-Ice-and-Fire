@@ -1,0 +1,77 @@
+// imports fonts
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Unicase");
+@import url("https://fonts.googleapis.com/css?family=Cinzel");
+
+@import "../style";
+
+// font variables
+$targaryanfontcolor: rgb(241, 241, 241);
+$targaryancardcolor: rgb(70, 14, 14);
+$targaryanfontsize: 4em;
+
+// card variables
+$cardcolor: whitesmoke;
+$cardfontsize: 1.1em;
+$deadcardfilter: grayscale(100%);
+
+.headerTargaryan {
+  @include headerbase;
+  background-image: url(../../images/nav/dragon_skin.jpg);
+}
+
+.targaryan {
+  background-image: url(../../images/main/targaryan_dragon.png);
+  background-size: 42%;
+  background-position: bottom center;
+  height: 100vh;
+  background-repeat: no-repeat;
+
+  .h1targaryan {
+    @include Hmain;
+    color: $targaryanfontcolor;
+    font-size: $targaryanfontsize;
+    position: absolute;
+    top: 6em;
+    left: 2em;
+    text-shadow: 0 0 2px black, 0 0 8px black, 0 0 64px black;
+  }
+}
+
+.targaryanfamily {
+  .h2targaryan {
+    @include Hmain;
+    color: $targaryanfontcolor;
+    margin: 2em 4em;
+    font-size: 3em;
+  }
+
+  .tree {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .card {
+      margin: 16px 36px;
+    }
+
+    .cardcontainer {
+      background-color: $targaryancardcolor;
+    }
+
+    .cardimg {
+      border: 2px solid $targaryancardcolor;
+    }
+
+    .h4card {
+      color: $targaryanfontcolor;
+      font-size: $cardfontsize;
+      text-align: center;
+      padding: 8px;
+    }
+  }
+
+  .deadcard {
+    filter: $deadcardfilter;
+  }
+}

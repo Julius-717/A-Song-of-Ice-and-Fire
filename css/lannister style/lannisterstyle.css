@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Unicase");
+@import url("https://fonts.googleapis.com/css?family=Cinzel");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Unicase");
+@import url("https://fonts.googleapis.com/css?family=Cinzel");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.base-header {
+  position: fixed;
+  width: 100%;
+  height: 3.6em;
+  border-bottom: 2px solid gray;
+  -webkit-box-shadow: 0 0 8px #ebe5c6;
+          box-shadow: 0 0 8px #ebe5c6;
+  z-index: 1;
+}
+
+body {
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: #111;
+}
+
+nav {
+  font-family: "Cormorant Unicase", serif;
+  padding: 1rem;
+  background-image: -webkit-gradient(linear, right top, left top, from(black), to(transparent));
+  background-image: linear-gradient(to left, black, transparent);
+  float: right;
+}
+
+nav ul li {
+  display: inline;
+  list-style: none;
+  color: #ebe5c6;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1em;
+  -webkit-transition-duration: 3s;
+          transition-duration: 3s;
+  color: #ebe5c6;
+}
+
+.headerLannister {
+  position: fixed;
+  width: 100%;
+  height: 3.6em;
+  border-bottom: 2px solid gray;
+  -webkit-box-shadow: 0 0 8px #ebe5c6;
+          box-shadow: 0 0 8px #ebe5c6;
+  z-index: 1;
+  background-image: url(../../images/nav/lion-fur.jpg);
+}
+
+.lannister {
+  background-image: url(../../images/main/lannister_lion.png);
+  background-color: #e4260d;
+  background-size: contain;
+  background-position: 15em 6em, center;
+  height: 720px;
+  background-repeat: no-repeat;
+}
+
+.lannister .h1lannister {
+  color: #ebe5c6;
+  font-size: 4rem;
+  text-align: center;
+  font-family: "Cinzel", sans-serif;
+  padding: 1em;
+  word-spacing: 0.8em;
+  color: #f5dc6d;
+  font-size: 4em;
+  position: absolute;
+  top: 6em;
+  left: 2em;
+  text-shadow: 0 0 2px black, 0 0 8px black, 0 0 64px black;
+}
+
+.lannisterfamily .h2lannister {
+  color: #ebe5c6;
+  font-size: 4rem;
+  text-align: center;
+  font-family: "Cinzel", sans-serif;
+  padding: 1em;
+  word-spacing: 0.8em;
+  color: #f5dc6d;
+  margin: 0 2em;
+  font-size: 3em;
+}
+
+.lannisterfamily .tree {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.lannisterfamily .tree .card {
+  margin: 16px 36px;
+}
+
+.lannisterfamily .tree .cardcontainer {
+  background-color: #e4260d;
+}
+
+.lannisterfamily .tree .cardimg {
+  border: 2px solid #f5dc6d;
+}
+
+.lannisterfamily .tree .h4card {
+  color: #f5dc6d;
+  font-size: 1.4em;
+  text-align: center;
+  padding: 8px;
+}
+
+.lannisterfamily .deadcard {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+/*# sourceMappingURL=lannisterstyle.css.map */
