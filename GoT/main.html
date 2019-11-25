@@ -1,0 +1,135 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="style/main.css" rel="stylesheet"></link>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/fonts/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
+    <link href="vendors/typehead/typehead.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="background"></div>
+    <div id="main">
+    </div>
+
+    <div class="sideBar">
+      <div class="title">Game Of Thrones</div>
+      <div class="seasonSelector">
+      </div>
+      <div class="searcher">
+        <span class="inputSearcher">
+          <i class="icon-search"></i>
+          <input id="search" placeholder="Search a character"></input>
+        </span>
+      </div>
+      <div class="characterInfo"></div>
+      <div class="close"><i class="icon-chevron-right"></i></div>
+    </div>
+    <div class="sideBarBackground"></div>
+    <div class="legend">
+      <div class="legendElement son"><i class="icon-bookmark"></i> Son</div>
+      <div class="legendElement parent"><i class="icon-bookmark"></i> Parent</div>
+      <div class="legendElement liege"><i class="icon-bookmark"></i> Liege</div>
+      <div class="legendElement friend"><i class="icon-bookmark"></i> Friend</div>
+      <div class="legendElement enemy"><i class="icon-bookmark"></i> Enemy</div>
+      <div class="legendElement spouse"><i class="icon-bookmark"></i> Spouse</div>
+      <div class="legendElement lover"><i class="icon-bookmark"></i> Lover</div>
+      <div class="legendElement courtesan"><i class="icon-bookmark"></i> Courtesan</div>
+      <div class="legendElement sibling"><i class="icon-bookmark"></i>  Sibling</div>
+    </div>
+
+    <div class="legendButton"><i class="icon-bookmark"></i> legend </div>
+    <div class="showMoreInfo"><i class="icon-trophy"></i> info </div>
+
+
+    <div class="about"> by <a target="_blank" href="http://twitter.com/johnhackworth">@johnhackworth <i class="icon-twitter"></i></a> <a target="_blank" href="https://github.com/johnHackworth/GameOfThrones" class="fork"> fork me on  <i class="icon-github"></i></a></span>
+    </div>
+    <div class="modal appInfo">
+      <h1>Here be dragons <i class="icon-fire"></i></h1>
+      <div class="text">
+        Please, be aware that this site contains severe spoilers to both the books and the TV series. If you haven't seen at least until the last TV episode, use it on your own peril!
+      </div>
+      <div class="buttoner">
+        <a href="#" class="button first">
+          <i class="icon-leaf"></i>
+          I'm a newbie
+          <span class="subtext">Go to the begining</span>
+        </a>
+        <a href="#" class="button last">
+          <i class="icon-flag"></i>
+          I've seen it all
+          <span class="subtext">Show me the last episode</span>
+        </a>
+      </div>
+    </div>
+    <div class="modal moreInfo">
+      <h1>What's this all about? <i class="icon-beer"></i></h1>
+      <div class="text">
+        This webapp intends to help those people who haven't read the A Song Of Ice And Fire book series to follow the TV series episodes without getting lost in a sea of characters.
+        <br/>
+        The history is packed of names, complex family trees, grudges between characters based on 'historical' events, and a whole world that can be overwhelming for those who didn't absorve all the history through the books before watching the show.
+        <br/>
+        So if you keep this site in your laptop or your tablet while you watch it, you won't have to ask "who is that Renly guy again?" anymore!
+      </div>
+      <div class="thanks">
+        This was developed 100% by <a target="_blank" href="http://twitter.com/johnhackworth">@johnhackworth</a>. A big big "thank you" to <a target="_blank" href="http://twitter.com/brittlelittle">@brittlelittle</a>, <a target="_blank" href="http://twitter.com/adrianmg">@adrianmg</a>, <a target="_blank" href="http://twitter.com/roiprada">@roiprada</a>, <a target="_blank" href="http://twitter.com/mrrocks">@mrrocks</a>,  <a target="_blank" href="http://twitter.com/scinos">@scinos</a>,  <a target="_blank" href="http://twitter.com/kartones">@kartones</a> and  <a target="_blank" href="http://twitter.com/amartinj">@amartinj</a> for their advices and testing help!
+      </div>
+      <div class="buttoner">
+        <a href="#" class="button close">
+          <i class="icon-leaf"></i>
+          Close
+          <span class="subtext">Winter is coming, you know?</span>
+        </a>
+      </div>
+    </div>
+    <div class="loader">
+      <i class="icon-cog icon-spin"></i>
+    </div>
+
+
+    <script id="characterTemplate" type="text/template">
+      <% if(typeof picture != "undefined") { %>
+      <div class="picture">
+        <img src="<%= picture %>"></img>
+      </div>
+      <% } %>
+
+      <h3 class="characterName">
+        <%= name %>
+        <div class="alignment">
+          <% if(house) {%>
+            <img src="assets/houses/<%= house %>.png"></img>
+          <% }%>
+          <% if(organization) {%>
+            <img src="assets/houses/<%= organization %>.png"></img>
+          <% }%>
+        </div>
+      </h3>
+
+      <div class="characterBio">
+
+        <%= bio %>
+      </div>
+    </script>
+
+    <script id="seasonSelector" type="text/template">
+      <div class="season">
+        <span class="prevSeason"><i class="icon-angle-left"></i> </span> Season <%= season %> <span class="nextSeason"> <i class="icon-angle-right"></i> </span>
+      </div>
+      <div class="episode">
+        <span class="prevEpisode"> <i class="icon-angle-left"></i> </span> Episode <%= episode %> <span class="nextEpisode"> <i class="icon-angle-right"></i> </span>
+      </div>
+    </script>
+
+
+    <script src="vendors/lodash/lodash.min.js"></script>
+    <script src="vendors/jquery/jquery-1.9.1.min.js"></script>
+    <script src="vendors/d3/d3.v3.min.js"></script>
+    <script src="vendors/typehead/typehead.js"></script>
+    <script src="app/character.js"></script>
+    <script src="app/casting.js"></script>
+    <script src="GoT/JS/board.js"></script>
+    <script src="GoT/JS/main.js"></script>
+  </body>
+</html>

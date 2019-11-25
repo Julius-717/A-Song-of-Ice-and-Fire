@@ -1,0 +1,210 @@
+[
+  { "name":"Jon Snow",
+    "parents": ["Ned Stark"],
+    "siblings": ["Sansa Stark", "Arya Stark",  "Robb Stark", "Rickon Stark", "Bran Stark"],
+    "closeFriends": ["Robb Stark", "Arya Stark"]
+  },
+  { "name":"Ned Stark",
+    "sons":["Jon Snow", "Sansa Stark", "Arya Stark",  "Robb Stark", "Rickon Stark", "Bran Stark"],
+    "marriage": ["Catelyn Tully"],
+    "siblings": ["Benjen Stark"],
+    "lovers": ["Catelyn Tully"],
+    "liege": ["Robert Baratheon"],
+    "enemies": ["Cersei Lannister", "Tyrion Lannister", "Jaime Lannister"],
+    "court": ["Hodor", "Theon Greyjoy", "Maester Luwin"]
+  },
+  {
+    "name": "Arya Stark",
+    "parents": ["Ned Stark", "Catelyn Tully"],
+    "siblings": ["Bran Stark", "Sansa Stark", "Jon Snow",  "Robb Stark", "Rickon Stark"],
+    "closeFriends": ["Jon Snow", "Syrio Forel"],
+    "enemies": ["Cersei Lannister", "Sandor Clegane", "Joffrey Baratheon"]
+  },
+  {
+    "name": "Sansa Stark",
+    "parents": ["Ned Stark", "Catelyn Tully"],
+    "lovers": ["Joffrey Baratheon"],
+    "siblings": ["Robb Stark", "Arya Stark", "Bran Stark", "Robb Stark", "Rickon Stark", "Jon Snow"]
+  },
+  {
+    "name": "Robb Stark",
+    "parents": ["Ned Stark", "Catelyn Tully"],
+    "closeFriends": ["Theon Greyjoy"],
+    "siblings": ["Sansa Stark", "Arya Stark",  "Bran Stark", "Rickon Stark", "Jon Snow"],
+    "enemies": ["Cersei Lannister", "Tyrion Lannister", "Jaime Lannister"]
+  },
+  {
+    "name": "Bran Stark",
+    "parents": ["Ned Stark", "Catelyn Tully"],
+    "siblings": ["Sansa Stark", "Arya Stark",  "Robb Stark", "Rickon Stark", "Jon Snow"],
+    "closeFriends": ["Maester Luwin"]
+  },
+  {
+    "name": "Rickon Stark",
+    "parents": ["Ned Stark", "Catelyn Tully"],
+    "siblings": ["Sansa Stark", "Arya Stark",  "Robb Stark", "Jon Snow", "Bran Stark"]
+  },
+  {
+    "name": "Catelyn Tully",
+    "sons": ["Sansa Stark", "Arya Stark",  "Robb Stark", "Rickon Stark", "Bran Stark"],
+    "siblings": ["Lysa Tully"],
+    "marriage": ["Ned Stark"],
+    "lovers": ["Ned Stark"],
+    "enemies": ["Jon Snow", "Tyrion Lannister", "Jaime Lannister", "Cersei Lannister"]
+  },
+  {
+    "name": "Theon Greyjoy",
+    "closeFriends": ["Robb Stark"],
+    "liege": ["Ned Stark"]
+  },
+  {
+    "name": "Robert Baratheon",
+    "king": true,
+    "closeFriends": ["Ned Stark"],
+    "marriage": ["Cersei Lannister"],
+    "sons": ["Tommen Baratheon", "Joffrey Baratheon", "Myrcella Baratheon"],
+    "court": ["Petyr Baelish", "Jaime Lannister", "Tyrion Lannister", "Maester Pycelle", "Varys"],
+    "siblings": ["Renly Baratheon", "Stannis Baratheon"],
+    "enemies": ["Viserys Targaryen", "Daenerys Targaryen"]
+  },
+  {
+    "name": "Cersei Lannister",
+    "marriage": ["Robert Baratheon"],
+    "enemies": ["Robert Baratheon"],
+    "lovers": ["Jaime Lannister"],
+    "parents": ["Tywin Lannister"],
+    "siblings":  ["Jaime Lannister", "Tyrion Lannister"],
+    "sons": ["Tommen Baratheon", "Joffrey Baratheon", "Myrcella Baratheon"],
+    "enemies": ["Tyrion Lannister", "Ned Stark", "Robert Baratheon"]
+  },
+  {
+    "name": "Jaime Lannister",
+    "parents": ["Tywin Lannister"],
+    "lovers": ["Cersei Lannister"],
+    "siblings":  ["Cersei Lannister", "Tyrion Lannister"],
+    "liege": ["Robert Baratheon"]
+  },
+  {
+    "name": "Tyrion Lannister",
+    "siblings":  ["Cersei Lannister", "Jaime Lannister"],
+    "closeFriends": ["Jon Snow"],
+    "parents": ["Tywin Lannister"],
+    "enemies": ["Cersei Lannister"]
+  },
+  {
+    "name": "Tywin Lannister",
+    "sons":  ["Cersei Lannister", "Tyrion Lannister", "Jaime Lannister"],
+    "closeFriends": ["Maester Pycelle"],
+    "liege": ["Robert Baratheon"]
+  },
+  {
+    "name": "Joffrey Baratheon",
+    "parents": ["Robert Baratheon", "Cersei Lannister"],
+    "siblings": ["Tommen Baratheon", "Myrcella Baratheon"],
+    "closeFriends": ["Sandor Clegane"],
+    "lovers": ["Sansa Stark"],
+    "enemies": ["Arya Stark"]
+  },
+  {
+    "name": "Tommen Baratheon",
+    "parents": ["Robert Baratheon", "Cersei Lannister"],
+    "siblings": ["Joffrey Baratheon", "Myrcella Baratheon"]
+  },
+  {
+    "name": "Myrcella Baratheon",
+    "parents": ["Robert Baratheon", "Cersei Lannister"],
+    "siblings": ["Joffrey Baratheon", "Tommen Baratheon"]
+  },
+  {
+    "name": "Petyr Baelish",
+    "closeFriends": ["Catelyn Tully", "Lysa Tully"],
+    "liege": ["Robert Baratheon"]
+  },
+  {
+    "name": "Varys",
+    "liege": ["Robert Baratheon"]
+  },
+  {
+    "name": "Daenerys Targaryen",
+    "siblings": ["Viserys Targaryen"],
+    "marriage": ["Khal Drogo"],
+    "closeFriends": ["Jorah Mormont", "Illyrio Monpatis"],
+    "enemies": ["Robert Baratheon"]
+  },
+  {
+    "name": "Jorah Mormont",
+    "liege": ["Viserys Targaryen"],
+    "enemies": ["Ned Stark"],
+    "closeFriends": ["Daenerys Targaryen"]
+  },
+  {
+    "name": "Viserys Targaryen",
+    "king": true,
+    "enemies": ["Robert Baratheon", "Ned Stark"],
+    "siblings": ["Daenerys Targaryen"],
+    "closeFriends": ["Illyrio Monpatis"],
+    "court": ["Jorah Mormont"]
+  },
+  {
+    "name": "Benjen Stark",
+    "siblings": ["Ned Stark"],
+    "closeFriends": ["Aemon Targaryen", "Jon Snow"]
+  },
+  {
+    "name": "Aemon Targaryen",
+    "closeFriends": ["Benjen Stark",  "Jon Snow"]
+  },
+  {
+    "name": "Stannis Baratheon",
+    "liege": ["Robert Baratheon"],
+    "siblings": ["Robert Baratheon", "Renly Baratheon"]
+  },
+  {
+    "name": "Renly Baratheon",
+    "liege": ["Robert Baratheon"],
+    "siblings": ["Stannis Baratheon", "Renly Baratheon"]
+  },
+  {
+    "name": "Khal Drogo",
+    "closeFriends": ["Illyrio Monpatis"],
+    "marriage": ["Daenerys Targaryen"]
+  },
+  {
+    "name": "Hodor",
+    "liege": ["Ned Stark"],
+    "closeFriends": ["Sansa Stark", "Arya Stark",  "Robb Stark", "Rickon Stark", "Bran Stark"]
+  },
+  {
+    "name": "Maester Luwin",
+    "liege": ["Ned Stark"],
+    "closeFriends": ["Sansa Stark", "Arya Stark",  "Robb Stark", "Rickon Stark", "Bran Stark"]
+  },
+  {
+    "name": "Lysa Tully",
+    "siblings": ["Catelyn Tully"],
+    "closeFriends": ["Petyr Baelish"],
+    "enemies": ["Cersei Lannister"]
+  },
+  {
+    "name": "Illyrio Monpatis",
+    "closeFriends": ["Khal Drogo", "Viserys Targaryen", "Daenerys Targaryen"]
+  },
+  {
+    "name": "Maester Pycelle",
+    "liege": ["Robert Baratheon"],
+    "closeFriends": ["Tywin Lannister", "Cersei Lannister"]
+  },
+  {
+    "name": "Sandor Clegane",
+    "liege": ["Robert Baratheon", "Joffrey Baratheon"],
+    "closeFriends": ["Sansa Stark"]
+  },
+  {
+    "name": "Alliser Thorne"
+  },
+  {
+    "name": "Syrio Forel",
+    "liege": ["Ned Stark"],
+    "closeFriends": ["Arya Stark"]
+  }
+]

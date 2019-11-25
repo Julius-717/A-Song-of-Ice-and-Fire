@@ -1,0 +1,712 @@
+@font-face {
+    font-family: "got";
+    src: url('../assets/fonts/got.ttf');
+}
+html {
+  height: 100%;
+}
+
+
+body {
+  background-color: #FDA;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+/*  min-width: 800px;
+  min-height: 600px;*/
+  background-image: url('../minimap.jpg');
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -10;
+  background-image: url('../mapblue.jpg');
+  background-position: -500px -500px;
+  background-repeat: no-repeat;
+
+-webkit-transition: background-position 1500000ms cubic-bezier(0.340, 0.005, 0.610, 0.995);
+   -moz-transition: background-position 1500000ms cubic-bezier(0.340, 0.005, 0.610, 0.995);
+    -ms-transition: background-position 1500000ms cubic-bezier(0.340, 0.005, 0.610, 0.995);
+     -o-transition: background-position 1500000ms cubic-bezier(0.340, 0.005, 0.610, 0.995);
+        transition: background-position 1500000ms cubic-bezier(0.340, 0.005, 0.610, 0.995); /* custom */
+
+-webkit-transition-timing-function: cubic-bezier(0.340, 0.005, 0.610, 0.995);
+   -moz-transition-timing-function: cubic-bezier(0.340, 0.005, 0.610, 0.995);
+    -ms-transition-timing-function: cubic-bezier(0.340, 0.005, 0.610, 0.995);
+     -o-transition-timing-function: cubic-bezier(0.340, 0.005, 0.610, 0.995);
+        transition-timing-function: cubic-bezier(0.340, 0.005, 0.610, 0.995);
+
+/*  -webkit-transition: all 42s easeInCirc;
+  -moz-transition: all 42s easeInCirc;
+  -o-transition: all 42s easeInCirc;
+  -ms-transition: all 42s easeInCirc;
+  transition: all 42s easeInCirc;*/
+}
+
+.background.south {
+  background-position: -500px -2000px;
+}
+
+.background.north {
+  background-position: 0px 0px;
+}
+
+.background.east {
+  background-position: -1000px -1000px;
+}
+.background.west {
+  background-position: 00px -1000px;
+}
+
+
+.charPortrait {
+  border: 2px solid #333;
+  stroke: #333;
+  stroke-width: 8;
+}
+
+g {
+}
+
+svg {
+  width: 80%;
+  padding-left: 2%;
+  padding-top: 1%;
+  padding-bottom: 3%;
+  height: 98%;
+  position: absolute;
+  top:0%;
+  display: block;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+svg.centered {
+  margin-left: 10%;
+}
+
+.charLabel {
+  font-size: 0.40em;
+  opacity:0.6;
+  text-transform: uppercase;
+  text-align: center;
+  stroke: #521;
+  letter-spacing:0.1em;
+  font-family: 'Marcellus', 'Open Sans', sans-serif;
+  font-weight: lighter;
+  -webkit-transition: opacity .3s linear, fill .3s linear;
+  -moz-transition: opacity .3s linear, fill .3s linear;
+  -o-transition: opacity .3s linear, fill .3s linear;
+  -ms-transition: opacity .3s linear, fill .3s linear;
+  transition: opacity .3s linear, fill .3s linear;
+}
+
+@media screen and (min-height:600px) {
+  .charLabel {
+    font-size: 0.60em;
+  }
+}
+
+.relLabel {
+  font-size: 0.65em;
+  text-transform: capitalize;
+  opacity:0.0;
+  text-align: center;
+  letter-spacing: 0.2em;
+  stroke: #FFF;
+  font-family: 'Raleway', 'Open Sans', sans-serif;
+  font-weight: lighter;
+  -webkit-transition: opacity 2s linear, fill 2s linear;
+  -moz-transition: opacity 2s linear, fill 2s linear;
+  -o-transition: opacity 2s linear, fill 2s linear;
+  -ms-transition: opacity 2s linear, fill 2s linear;
+  transition: opacity 2s linear, fill 2s linear;
+}
+
+.relLabel.shitty {
+  -webkit-transition: opacity 0s linear, fill 0s linear;
+  -moz-transition: opacity 0s linear, fill 0s linear;
+  -o-transition: opacity 0s linear, fill 0s linear;
+  -ms-transition: opacity 0s linear, fill 0s linear;
+  transition: opacity 0s linear, fill 0s linear;
+}
+
+.relLabel.shown{
+  opacity: .5;
+}
+
+
+g {
+  cursor: pointer;
+}
+
+g:hover .charLabel {
+  opacity: 1;
+
+}
+
+.charSelected .charLabel {
+  opacity: 1;
+  font-weight:bold;
+  stroke: #321;
+}
+
+
+line, path {
+  stroke-width:8px;
+  stroke: #FF0;
+  stroke-linecap: round;
+  fill: transparent;
+  opacity: 0.8;
+}
+
+path.sibling {
+  stroke: #E9B64D;
+}
+
+.legend .legendElement i {
+  font-size:1.8em;
+  top:4px;
+  position: relative;
+  text-shadow: 0 0 2px #333;
+}
+.legend .legendElement.sibling i{
+  color: #E9B64D;
+}
+
+path.parent {
+  stroke: #631;
+}
+.legend .legendElement.parent i {
+  color: #631;
+}
+
+path.friend {
+  stroke: #90CA77;
+  stroke-width:0.3em;
+}
+.legend .legendElement.friend i {
+  color: #90CA77;
+}
+
+path.son {
+  stroke: #E48743;
+}
+.legend .legendElement.son i {
+  color: #E48743;
+}
+
+path.lover {
+  stroke: #9E3B33;
+}
+.legend .legendElement.lover i{
+  color: #9E3B33;
+}
+
+path.spouse {
+  stroke: #EC633F;
+}
+.legend .legendElement.spouse i{
+  color: #EC633F;
+}
+
+path.enemy {
+  stroke: #222;
+  stroke-width:0.3em;
+}
+.legend .legendElement.enemy i {
+  color: #222;
+}
+
+path.liege {
+  stroke: #81C6DD;
+  stroke-width:0.3em;
+}
+.legend .legendElement.liege i{
+  color: #81C6DD;
+}
+
+path.courtesan {
+  stroke: #EEE;
+  stroke-width:0.3em;
+}
+.legend .legendElement.courtesan i{
+  color: #EEE;
+}
+
+
+.portrait {
+
+}
+
+svg body {
+  background-color: transparent;
+}
+
+g .heraldic {
+  opacity: 0.3;
+  -webkit-transition: opacity .3s linear, fill .3s linear;
+  -moz-transition: opacity .3s linear, fill .3s linear;
+  -o-transition: opacity .3s linear, fill .3s linear;
+  -ms-transition: opacity .3s linear, fill .3s linear;
+  transition: opacity .3s linear, fill .3s linear;
+}
+
+g:hover .heraldic {
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.charSelected .heraldic {
+  opacity: 1;
+}
+
+.icon.dead {
+  opacity: 0.8;
+}
+
+.sideBar, .sideBarBackground {
+  position: fixed;
+  right:0px;
+  width:20%;
+  min-width:225px;
+  height: 96%;
+  top: 0;
+  color: #FFF;
+  padding:2% 0.5% 0;
+  font-size:1em;
+  z-index: 9999999999;
+  opacity: 1;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+
+}
+
+.sideBarBackground {
+  background-color: #333;
+  opacity: 0.95;
+  z-index: 8;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+
+}
+
+.sideBar.closed, .sideBarBackground.closed {
+  right:-20%;
+  opacity: 0;
+}
+
+.inputSearcher {
+  padding: 10px;
+  background: #FFF;
+  border: 1px solid #666;
+  border-radius: 3px;
+  color: #333;
+  width: 60%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 5%;
+}
+.inputSearcher .twitter-typeahead {
+  position: absolute !important;
+}
+.inputSearcher .tt-hint,
+.inputSearcher .tt-query {
+  width: 90% !important;
+  /*float:right !important;*/
+  border: 0 !important;
+}
+
+.inputSearcher .tt-dropdown-menu {
+
+}
+
+.inputSearcher .icon-search {
+  margin-right: 10px;
+}
+
+.inputSearcher input:focus,
+.inputSearcher input:active {
+  border: 0;
+  outline: none;
+}
+
+.inputSearcher .tt-dropdown-menu.tt-is-open {
+  background: none repeat scroll 0 0 #FEFEFE;
+  border-radius: 3px 3px 3px 3px;
+  bottom: 0;
+  display: inline-block;
+  font-family: marcellus;
+  font-size: 12px;
+  height: 120px;
+  left: -24%;
+  padding: 1px 10px;
+  position: absolute;
+  top: -120px;
+  width: 110%;
+  z-index: 100;
+}
+/*.searcher {
+  text-align: right;
+  display: inline-block;
+  margin: 1em 0 1em;
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+}
+
+
+.inputSearcher input {
+  border: 0;
+  width: 55%;
+}
+
+*/
+.characterInfo {
+  width: 90%;
+  padding: 0% 5% 0;
+  height: 50%;
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  top: 40px;
+}
+@media screen and (min-height:600px) {
+  .characterInfo {
+    top: 80px;
+
+  }
+}
+.characterName {
+  position: absolute;
+  margin-top: 5px;
+  width:90%;
+}
+
+.close {
+  position: absolute;
+  bottom: 0;
+  border: 1px solid #FFF;
+  border-radius: 2px;
+  padding: 7px 11px 7px;
+  font-size: 20px;
+  z-index: 14;
+  margin: 5%;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.characterBio {
+  display:block;;
+  /*max-height: 200px;*/
+  position: relative;
+  height: 30%;
+  overflow-y: auto;
+  margin-top: 2em;
+}
+@media screen and (min-height:600px) {
+ .characterBio {
+   height: 60%;
+    margin-top: 3em;
+ }
+}
+
+.picture {
+  height:20%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  max-width:45%;
+  margin-left:25%;
+
+}
+
+@media screen and (min-height:600px) {
+  .picture {
+    height:40%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+}
+
+
+.picture img {
+  width: 100%;
+}
+
+.alignment {
+  float:right;
+}
+
+.timeSelector {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  z-index:15;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+.seasonSelector {
+  z-index: 18;
+  padding:0% 5% 1%;
+  width: 90%;
+  font-size: 1.1em;
+  position: absolute;
+  bottom:80px;
+}
+
+.seasonSelector i {
+  font-size: 1.5em;
+  padding:0 1em;
+}
+
+.sideBar .title {
+  width: 90%;
+  font-size:0.6em;
+  padding: 0 5%;
+  overflow: hidden;
+  font-family: 'got', 'marcellus';
+  text-shadow: 0 0 1px #000;
+  text-align: center;
+}
+@media screen and (min-height:600px) {
+  .sideBar .title {
+    font-size:1.2em;
+    padding:3% 5% 1%;
+  }
+}
+
+.season, .episode {
+  width: 100%;
+  text-align: center;
+  font-family: marcellus;
+}
+.season span, .episode span {
+  cursor: pointer;
+}
+
+.legend {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  display: none;
+}
+
+.about {
+  position: fixed;
+  bottom: 5px;
+  right: 22%;
+  display: inline-block;
+  padding: 3px 10px;
+  font-family: marcellus;
+  font-size: 12px;
+  opacity: 0.8;
+  color: #666;
+}
+
+.about a {
+  color: #666;
+  text-decoration: none;
+}
+
+.about .fork {
+  margin-left: 20px;
+}
+
+.legend .legendElement {
+  display: inline-block;
+  padding: 3px 10px;
+  font-family: marcellus;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.legendButton {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  cursor: pointer;
+  font-family: marcellus;
+  color: #666;
+  opacity: 0.8;
+}
+
+
+.showMoreInfo {
+  position: fixed;
+  bottom: 5px;
+  left: 105px;
+  cursor: pointer;
+  font-family: marcellus;
+  color: #666;
+  opacity: 0.8;
+}
+
+.showMoreInfo i {
+  color: #991;
+}
+
+.legendButton i {
+  color: #921;
+}
+
+.modal {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 94%;
+  padding:2% 3%;
+  display: inline-block;
+  color: #FFF;
+  border-radius: 5px;
+  font-family: 'Marcellus';
+  z-index: -10;
+  opacity: 0;
+
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+@media screen and (min-height:600px) {
+  .modal {
+    top: 30%;
+    width: 34%;
+    left: 30%;
+  }
+}
+
+.modal.show {
+  z-index: 99999999999;
+  opacity: 0.9;
+}
+
+.appInfo, .moreInfo {
+  background-color: #444;
+}
+
+.appInfo h1 {
+  font-family: "got";
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.appInfo .text {
+  display: block;
+  width: 100%;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.buttoner {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.appInfo .icon-fire {
+  color: #C00 ;
+  font-size: 25px ;
+  /*text-shadow:0 0 2px #FF0;*/
+}
+
+.button {
+  border: 1px solid #FFF;
+  display: inline-block;
+  border-radius: 2px;
+  padding: 7px 11px 7px;
+  font-size: 20px;
+  z-index: 14;
+  margin: 2%;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  color: #FFF;
+  text-align: right;
+
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.button:hover {
+  color: #FFA;
+  border-color: #FFA;
+  background: #333;
+}
+
+.button.first:hover i {
+  color: #cFc;
+}
+.button.last:hover i {
+  color: #Fcc;
+}
+
+.button .subtext {
+  display: block;
+  font-size: 10px;
+}
+
+.moreInfo {
+  top: 00%;
+  left:0%;
+  width: 100%;
+  font-size:0.5em;
+}
+
+
+@media screen and (min-height:600px) {
+  .moreInfo {
+    top: 10%;
+    left: 15%;
+    width: 50%;
+    font-size: 1em;
+  }
+
+}
+.moreInfo .text,
+.moreInfo .thanks {
+  display: block;
+  margin-bottom: 1em;
+}
+.moreInfo .buttoner {
+  text-align: right;
+}
+
+.moreInfo .buttoner a {
+  position: relative;
+}
+
+.moreInfo a {
+  color: #EEE;
+}
+
+.loader {
+  position: fixed;
+  top: 5px;
+  margin-left:5px;
+  font-size:77px;
+  color: #976;
+  z-index: 9999999;
+  text-shadow: 1px 1px 1px #555;
+}
