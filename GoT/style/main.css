@@ -73,8 +73,7 @@ body {
   stroke-width: 8;
 }
 
-g {
-}
+
 
 svg {
   width: 80%;
@@ -245,9 +244,9 @@ path.courtesan {
 }
 
 
-.portrait {
+/* .portrait { */
 
-}
+/* } */
 
 svg body {
   background-color: transparent;
@@ -333,9 +332,9 @@ g:hover .heraldic {
   border: 0 !important;
 }
 
-.inputSearcher .tt-dropdown-menu {
+/* .inputSearcher .tt-dropdown-menu { */
 
-}
+/* } */
 
 .inputSearcher .icon-search {
   margin-right: 10px;
