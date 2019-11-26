@@ -14,4 +14,4 @@ Julius Kash
 **HTML5** **JAVASCRIPT** **JSON** **CSS**
 
 ## KNOWN BUGS
-There are no known bugs
+There are no known bugs. The project is not yet complete. Incase of any issue reach me at my github page.
