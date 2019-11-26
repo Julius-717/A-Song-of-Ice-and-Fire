@@ -9,3 +9,9 @@
 
 ## Author
 Julius Kash
+
+### Setup/Installation Requirements
+**HTML5** **JAVASCRIPT** **JSON** **CSS**
+
+## KNOWN BUGS
+There are no known bugs
